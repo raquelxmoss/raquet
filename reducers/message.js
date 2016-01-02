@@ -8,9 +8,10 @@ const initialState = {
   ]
 }
 
-export default function messages(state = initialState, action) {
-  switch action.type {
+export function messages(state = initialState, action) {
+  switch (action.type) {
     case ADD_MESSAGE:
+    // add some shit to the database here
       return Object.assign({}, state, {
         messages: [
            ...state.messages,
