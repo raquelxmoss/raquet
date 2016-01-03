@@ -1,59 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider, connect } from 'react-redux'
+import App from './containers/App'
+import messages from './reducers/messages'
 
-import { messages } from './reducers/message';
-import { addMessage, deleteMessage } from './actions/message_actions'
+let store = createStore(messages)
+let state = store.getState()
 
 function mapStateToProps(state) {
-  return {
-    messages: messages.state.messages
-  }
+  return { messages: state }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onAddMessage: () => dispatch(addMessage()),
-    onDeleteMessage: () => dispatch(deleteMessage())
-  }
-}
+let MainApp = connect(mapStateToProps)(App)
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
-
-export default class MessageForm extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return(
-      messages.map(function(){
-        <li>{this.text}</li>
-      })
-    )
-  }
-}
-
-
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <p>hi</p>
-    );
-  }
-}
-
-ReactDOM.render(
+render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
-);
+)
