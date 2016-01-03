@@ -1,6 +1,6 @@
-import { ADD_MESSAGE } from '../actions/message_actions'
+import { ADD_MESSAGE } from '../actions/message_actions';
 
-let initialState = [
+const seedMessages = [
   {
     id: 0,
     text: "Hey",
@@ -10,6 +10,8 @@ let initialState = [
     text: "Whatup"
   }
 ]
+
+const initialState = { messages: seedMessages }
 
 const messages = (state = initialState, action) => {
   switch(action.type) {
