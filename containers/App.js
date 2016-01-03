@@ -1,12 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { addMessage } from '../actions/message_actions';
 import MessageList from '../components/MessageList'; 
+import ComposeMessage from '../components/ComposeMessage';
 
 class App extends Component {
   render() {
     return (
       <div>
         <MessageList messages={this.props.messages} />
+        <ComposeMessage />
       </div>
     )
   }
