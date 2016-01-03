@@ -16,7 +16,7 @@ let MainApp = connect(mapStateToProps)(App)
 
 render(
   <Provider store={store}>
-    <App />
+    <MainApp />
   </Provider>,
   document.getElementById('root')
 )
