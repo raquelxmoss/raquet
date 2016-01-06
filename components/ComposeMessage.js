@@ -7,7 +7,7 @@ class ComposeMessage extends Component {
       subject: this.refs.subject.value.trim(),
       body: this.refs.body.value.trim()
     }
-    this.props.createMessage(message.body)
+    this.props.createMessage(message.subject, message.body)
   }
 
   render() {

@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <MessageList messages={this.props.messages} />
-        <ComposeMessage createMessage={text => dispatch(addMessage(text))} />
+        <ComposeMessage createMessage={(subject, text) => dispatch(addMessage(subject, text))} />
       </div>
     )
   }
