@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import MessageList from '../components/MessageList'; 
+import MessageList from '../components/MessageList';
 import ComposeMessage from '../components/ComposeMessage';
 import { addMessage } from '../actions/message_actions';
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <MessageList messages={this.props.messages} />
-        <ComposeMessage createMessage={() => dispatch(addMessage)} />
+        <ComposeMessage createMessage={text => dispatch(addMessage(text))} />
       </div>
     )
   }
