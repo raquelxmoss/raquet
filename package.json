@@ -5,7 +5,8 @@
   "scripts": {
     "watch": "watchify index.js -o public/javascripts/bundle.js -v -t babelify",
     "build": "browserify index.js -o public/javascripts/bundle.js -t babelify",
-    "start": "npm run watch & nodemon ./bin/www"
+    "dev": "npm run watch & nodemon ./bin/www",
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.3.13",
