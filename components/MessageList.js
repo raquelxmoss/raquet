@@ -5,7 +5,10 @@ class MessageList extends Component {
     return(
       <ul>
         {this.props.messages.map(message =>
-          <li key={message.id}>{message.text}</li>
+          <li key={message.id}>
+            <p><strong>{message.subject}</strong></p>
+            <p>{message.text}</p>
+          </li>
         )}
       </ul>
     )
