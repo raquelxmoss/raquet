@@ -1,14 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import { addMessage } from '../actions/message_actions';
 import MessageList from '../components/MessageList'; 
 import ComposeMessage from '../components/ComposeMessage';
+import { addMessage } from '../actions/message_actions';
 
 class App extends Component {
   render() {
+    let { dispatch } = this.props
     return (
       <div>
         <MessageList messages={this.props.messages} />
-        <ComposeMessage />
+        <ComposeMessage createMessage={() => dispatch(addMessage)} />
       </div>
     )
   }

@@ -4,15 +4,15 @@ import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 import App from './containers/App';
 import messages from './reducers/messages';
+import { addMessage } from './actions/message_actions';
 
 let store = createStore(messages)
-let state = store.getState()
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return { messages: state.messages }
 }
 
-let MainApp = connect(mapStateToProps)(App)
+const MainApp = connect(mapStateToProps)(App)
 
 render(
   <Provider store={store}>
