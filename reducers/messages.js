@@ -15,7 +15,7 @@ const seedMessages = [
 
 const initialState = { messages: seedMessages }
 
-export default function messages (state = initialState, action) {
+const messages = (state = initialState, action) => {
   switch(action.type) {
     case ADD_MESSAGE:
       return Object.assign({}, state, {messages: [...state.messages, {id: action.id, subject: action.subject, text: action.text}]});
@@ -24,3 +24,4 @@ export default function messages (state = initialState, action) {
   }
 };
 
+export default messages
