@@ -5,7 +5,7 @@ import { addMessage } from '../actions/message_actions';
 
 class App extends Component {
   render() {
-    let { dispatch } = this.props
+    const { dispatch } = this.props
     return (
       <div>
         <MessageList messages={this.props.messages} />
