@@ -23,6 +23,7 @@
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
     "nodemon": "^1.8.1",
+    "pg": "^4.4.3",
     "react": "^0.14.5",
     "react-redux": "^4.0.6",
     "redux": "^3.0.5",
